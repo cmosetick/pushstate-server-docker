@@ -1,15 +1,11 @@
 # Docker Hub: cmosetick/pushstate-server
+# This image is alpine based
 
-FROM node:6.9.1
+FROM mhart/alpine-node:6
 MAINTAINER <cmosetick@gmail.com>
-ENV DEBIAN_FRONTEND noninteractive
 
 RUN \
-apt-get update && \
-apt-get install -yqq supervisor && \
-apt-get autoclean && \
-apt-get clean && \
-rm -rf /var/cache/apt/* && \
+apk --no-cache add supervisor && \
 npm install -g pushstate-server && \
 npm cache clean
 

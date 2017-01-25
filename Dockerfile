@@ -9,6 +9,7 @@ apk --no-cache add supervisor openssh git && \
 npm install -g pushstate-server && \
 npm cache clean && \
 rm /etc/supervisord.conf && \
+mkdir /root && \
 mkdir -p /etc/supervisor/conf.d && \
 mkdir -p /var/log/supervisor
 
